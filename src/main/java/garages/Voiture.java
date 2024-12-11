@@ -29,11 +29,11 @@ public class Voiture {
 	 */
 	public void entreAuGarage(Garage g) throws IllegalStateException {
 		// Et si la voiture est déjà dans un garage ?
-		if (myStationnements.isEmpty() || !this.myStationnements.getLast().estEnCours()) {
+		if (myStationnements.isEmpty() || !myStationnements.getLast().estEnCours()) {
 			Stationnement s = new Stationnement(this, g);
 			myStationnements.add(s);
 		} else {
-			throw new IllegalStateException();
+			throw new IllegalStateException("Déjà dans un garage");
 		}
 	}
 
@@ -59,8 +59,11 @@ public class Voiture {
 	 */
 	public Set<Garage> garagesVisites() {
 		// TODO: Implémenter cette méthode
-
-		return new HashSet<>();
+		Set<Garage> garages = new HashSet<>();
+		for (Stationnement s : myStationnements) {
+			garages.add(s.getGarageVisite());
+		}
+		return garages;
 	}
 
 	/**
