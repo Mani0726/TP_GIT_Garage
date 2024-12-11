@@ -100,10 +100,17 @@ public class Voiture {
 	 */
 
 	public void imprimeStationnements(PrintStream out) {
-		// TODO: Implémenter cette méthode
-		throw new UnsupportedOperationException("Pas encore implémenté");
-		// Utiliser les méthodes toString() de Garage et Stationnement
-
+		for ( Garage g : garagesVisites()){
+			String texte = new String();
+			texte += g.toString();
+			for (Stationnement s : myStationnements) {
+				if (s.getGarageVisite()==g){
+					texte += s.toString();
+				}
+			}
+			System.out.println(texte);
+			out.println(texte);
+		}
 	}
 
 }

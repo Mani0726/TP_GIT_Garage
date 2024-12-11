@@ -21,7 +21,7 @@ class GarageTest {
 		garageAlbi = new Garage("Universite Champollion Albi");
 	}
 
-	@Test //1
+	@Test //1 FAIT
 	void lesVoituresSontBienInitialisees() {
 		// Given: une voiture après initialisation
 		// Then: la voiture n'est pas dans un garage
@@ -30,7 +30,7 @@ class GarageTest {
 		assertTrue(voitureISIS.garagesVisites().isEmpty());
 	}
 
-	@Test //2
+	@Test //2 FAIT
 	void entrerAuGarageChangeGarageVisites() throws Exception {
 		// Given: une voiture après initialisation
 		// When: On fait entrer la voiture au garage g1
@@ -41,7 +41,7 @@ class GarageTest {
 		assertTrue(voitureISIS.garagesVisites().contains(garageCastres));
 	}
 
-	@Test //3
+	@Test //3 FAIT
 	void sortirDuGarageChangeGarageVisites() throws Exception {
 		// Given: une voiture après initialisation
 		// When: On fait entrer puis sortir la voiture du garage g1
